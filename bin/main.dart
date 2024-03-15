@@ -7,9 +7,9 @@ void displayFruitDetails(List<Map<String, dynamic>> fruits) {
 }
 
 // Function to apply discount to each fruit price
-void applyPriceDiscount(List<Map<String, dynamic>> fruits, double discount) {
+void applyPriceDiscount(List<Map<String, dynamic>> fruits, double _discount) {
   for (var fruit in fruits) {
-    fruit['price'] = (fruit['price'] as double) * (1 - discount);
+    fruit['price'] = (fruit['price'] as double) * (1 - _discount);
   }
 }
 
@@ -24,8 +24,8 @@ void main() {
   print("\nOriginal Fruit Details before Discount:");
   displayFruitDetails(fruits);
 
-  double discount = 0.1; // apply 10% discount question wise
-  applyPriceDiscount(fruits, discount);
+  double _discount = 10 / 100; // apply 10% discount question wise
+  applyPriceDiscount(fruits, _discount);
 
   // applying discount and show the result
   print("\nFruit Details After Applying 10% Discount:");
